@@ -185,6 +185,49 @@ lsof -nti:6200 | xargs kill -9
 jupyter notebook list
 
 
+# a couple more helpful conda commands...
+# you can rollback your environment to a working status
+# if you install some packages and it screws everything up
+# first list the packages installed in your env
+
+conda list
+
+
+# too see the history of your environment updates
+conda list revisions
+
+
+# to rollback to a previous env status
+
+conda install --revision 0
+
+
+# check your packages installed now
+
+conda list
+
+
+# this has saved me a number of times when I have
+# had a very specific environment working
+# and then screwed it up with some random package update
+
+# although, conda is usually really good a figuring 
+# out how to make everything work together seamlessly
+
+# lets remove this test env since we don't want it
+# hanging around taking up space
+# go back to your base environment
+# btw, don't use your base env for any real development
+
+conda activate base
+conda env list
+
+
+# now you can delete the test environment
+
+conda remove -n test
+conda env list
+
 ### now we will do a git commit
 
 # go to your original jupyter lab session in browser
@@ -204,6 +247,12 @@ git status
 
 git add README.md
 git status
+
+
+# when you want to add all modified and untracked files at once
+# a good shortcut is
+
+git add -A
 
 
 # now the changes are staged
@@ -237,3 +286,26 @@ git push
 # so you need to figure out ways to be able to still 
 # develop your analysis even when you don't have access to
 # all of the data
+
+
+######################################################
+
+# For an introduction to some of the basics of 
+# scientific computing in python see the the
+# "Python Data Science Handbook"
+# and start on section 2
+
+# you can run these notebooks interactively on google cloud
+# just by clicking the 'colab' button!
+
+
+https://jakevdp.github.io/PythonDataScienceHandbook/
+
+
+# For those comfortable with python, explore the PCA notebook
+# in your browser, working/reading through it
+# you can also find this exercise in the table of contents
+# in the link below above in section 5.09
+
+# all credit for this phenomenal resource goes to 
+# Jake VanderPlas
