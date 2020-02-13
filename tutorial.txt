@@ -124,6 +124,9 @@ localhost:4200/lab
 # you should be able to navigate through directories on the right
 # next, simply click on unsupervised.ipynb
 
+# run the first code cell (the package imports)
+# it should be successfull (no output)
+
 # notice that you can open .yml and .txt file as well
 # jupyter lab is really powerful
 # you can use it as an interactive computing environment,
@@ -140,7 +143,8 @@ conda create -n test
 conda activate test
 
 
-# check that it is empty, and the install jupyter lab
+# check that it is empty, i.e. there no packages installed
+# and then install jupyter lab
 
 conda list
 conda install jupyterlab
@@ -163,8 +167,8 @@ unsupervised.ipynb
 
 
 # this should fail due to package dependencies
-# proving the function of the repo is dependent on the
-# environment
+# proving the function of the repo is independent of
+# the environment
 
 # go back to the terminal window and check
 # where your notebooks are running
@@ -185,19 +189,67 @@ lsof -nti:6200 | xargs kill -9
 jupyter notebook list
 
 
-# a couple more helpful conda commands...
+# **I truly  never open multiple jupyter lab sessions
+# because you can work on mutiple notebooks at once 
+# under different environments
+
+# you need to install nb_conda_kernels in your
+# base conda environment
+# then, you can run jupyter lab out of `base` env
+# every time, and go to the tab on the right side
+# of the jupyter session and select whichever conda env
+# you would like to use
+
+# kill and exit your jupyter lab session (at 4200)
+# from the browser, under `file` select shutdown
+
+# now go to your terminal and install this package in
+# your base environment
+# you don't have to explicitly switch to the base env
+# to do this (just stay in the intro-comp-wrkflw env)
+# heres the site for reference
+# https://github.com/Anaconda-Platform/nb_conda_kernels
+
+conda install -n base nb_conda_kernels
+
+
+# start jupyter lab again
+
+jupyter lab --port=4200 --no-browswer &
+
+
+# now just go to your browser and refresh the tab at
+
+localhost:4200/lab
+
+
+# open unsupervised.ipynb go to the right side
+# there is a tab that probably says `Python [...]`
+# select the drop down and test running this cell 
+# when you switch between your two env recently created
+# intro-comp-wrkflw and test
+
+
+### a couple more helpful conda commands...
 # you can rollback your environment to a working status
 # if you install some packages and it screws everything up
-# first list the packages installed in your env
 
+# first open a new terminal tab/window
+# and activate your test env, then
+# list the packages installed in your env
+
+conda activate test
 conda list
 
 
 # too see the history of your environment updates
-conda list revisions
+# helpfully it shows the date
+
+conda list --revisions
 
 
 # to rollback to a previous env status
+# where the number is the approriate revision number
 
 conda install --revision 0
 
@@ -227,6 +279,7 @@ conda env list
 
 conda remove -n test
 conda env list
+
 
 ### now we will do a git commit
 
