@@ -1,0 +1,74 @@
+## A Simple Computational Workflow
+## PSPG 245B.2 Systems Pharmacology
+
+## W. Connell
+## 2020.02.13
+
+# open terminal
+
+# git should be installed system wide if you used the
+# download/install link provided
+# check it is installed with
+# if there are issues in the follow steps reference
+# https://help.github.com/en/github/using-git/setting-your-username-in-git
+
+git --version
+
+
+# set your global github username and email
+
+git config --global user.name your_username
+git config --global user.email "your_email@gmail.com"
+# check this
+git config --global user.name
+git config --global user.email
+
+
+# create a new conda environment
+# this will sandbox any package you download
+# reducing conflict and automating package harmonization
+# the default is a python kernel
+
+conda create -n intro-comp-wrkflw
+conda activate xxxxxxx
+
+
+# create a parent directory for your GitHub repositories
+# this is unrelated to the conda environment or git
+# this is just part of your file tree
+# which is accessible when you are in any conda env
+
+mkdir github
+cd github
+
+
+# fork my GitHub repository
+# go to https://github.com/wconnell/intro-comp-wrkflw
+# and in the upper right corner click "Fork"
+# this will create an exact copy of my repo in your
+# GitHub account
+
+# this will not track any changes I make to mine
+# for collaborative software development you can set
+# a fork up to track changes and update them based on the
+# repo you have forked from
+
+# go to your forked repo version
+# click "clone or download" (green button)
+# copy the text
+# clone the forked repo
+
+git clone git@github.com:wconnell/intro-comp-wrkflw.git
+
+
+# this will fail unless you have already set up a connection
+# between your computer and github via ssh
+# reference this webpage to setup a ssh key on github
+# so the github server will recognize your computer
+# Follow the directions on the site closely...
+# First check if you have a ssh key on your computer! you should!
+# avoid generating extra ssh keys! they clutter everything up!
+
+# https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
+
+
