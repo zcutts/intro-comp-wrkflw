@@ -304,8 +304,7 @@ git status
 
 # when you want to add all modified and untracked files at once
 # a good shortcut is
-
-git add -A
+# git add -A
 
 
 # now the changes are staged
@@ -338,7 +337,7 @@ git push
 # on github (there is a low limit)
 # so you need to figure out ways to be able to still 
 # develop your analysis even when you don't have access to
-# all of the data
+# all of your data
 
 
 ######################################################
