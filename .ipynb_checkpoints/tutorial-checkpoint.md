@@ -1,18 +1,20 @@
-## A Simple Computational Workflow
+# A Simple Computational Workflow
 ## PSPG 245B.2 Systems Pharmacology
 
-## W. Connell
-## 2020.02.13
+#### W. Connell
+#### 2020.02.13
 
-# open terminal
+Open terminal
 
-# git should be installed system wide if you used the
-# download/install link provided
-# check it is installed with
-# if there are issues in the follow steps reference
-# https://help.github.com/en/github/using-git/setting-your-username-in-git
+git should be installed system wide if you used the download/install link provided
+check it is installed with
 
-git --version
+`git --version`
+
+
+if there are issues, reference
+https://help.github.com/en/github/using-git/setting-your-username-in-git
+
 
 
 # set your global github username and email
