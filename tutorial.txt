@@ -17,20 +17,11 @@ git --version
 
 # set your global github username and email
 
-git config --global user.name your_username
+git config --global user.name "your_username"
 git config --global user.email "your_email@gmail.com"
 # check this
 git config --global user.name
 git config --global user.email
-
-
-# create a new conda environment
-# this will sandbox any package you download
-# reducing conflict and automating package harmonization
-# the default is a python kernel
-
-conda create -n intro-comp-wrkflw
-conda activate xxxxxxx
 
 
 # create a parent directory for your GitHub repositories
@@ -58,7 +49,7 @@ cd github
 # copy the text
 # clone the forked repo
 
-git clone git@github.com:wconnell/intro-comp-wrkflw.git
+git clone git@github.com:your_username/intro-comp-wrkflw.git
 
 
 # this will fail unless you have already set up a connection
@@ -72,3 +63,51 @@ git clone git@github.com:wconnell/intro-comp-wrkflw.git
 # https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
 
 
+# once you have completed this (fingers crossed...)
+# you can go back and clone the forked repo
+
+git clone git@github.com:your_username/intro-comp-wrkflw.git
+
+
+# move into the cloned directory
+# and check the version control status
+
+cd intro-comp-wrkflw
+git status
+
+
+# inspect the directory and 
+# the first few lines of the environment file
+
+ls
+head environment.yml
+
+
+# the environment.yml file contains directions
+# for conda to create a new environment
+# which I have defined with a name and set of packages
+# activate it following successful creation/installation
+
+conda env create -f environment.yml
+conda activate intro-comp-wrkflw
+
+
+# remember that although the conda environment has the same
+# name as the git repo, these are separate!
+# you can activate a different conda env and still
+# manipulate this repo
+# things like the .ipynb file may not run because
+# it has a set of dependencies (python packages) that the
+# conda environment is required to have in order for proper usage
+
+# we will go through an exercise to highlight this concept
+# and introduce so more funcitonality
+
+# run jupyter lab
+# you may need to try a different port, 8888 is always a good one
+# although if you are already running a notebook on your computer
+# it may not be available
+# you should be able to navigate through directories on the right
+
+jupyter lab --port=4200 --no-browser &
+# next, simply click on unsupervised.ipynb
